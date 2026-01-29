@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kashif Ali - AI Researcher</title>
     
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS (Loaded via CDN for standalone use) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -27,7 +27,7 @@
         }
     </script>
 
-    <!-- React & ReactDOM -->
+    <!-- React & ReactDOM (Loaded via CDN) -->
     <script type="importmap">
     {
         "imports": {
@@ -59,7 +59,6 @@
         } from 'lucide-react';
 
         // --- CONFIGURATION ---
-        // NOTE: In a real production app, use a backend to hide this key.
         const GROQ_API_KEY = "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"; 
         const GROQ_MODEL = "llama-3.3-70b-versatile"; 
         const PROFILE_IMAGE_URL = "https://i.ibb.co/RGWg4x0m/1705422895636.jpg"; 
@@ -97,9 +96,9 @@
           projects: [
             {
               title: "Prompt-Conditioned Material Generation",
-              org: "FAU (PhotoMat Extension)",
+              org: "FAU",
               period: "Sep 2025 – Present",
-              tech: ["StyleGAN", "DINOv2", "PyTorch", "PBR Rendering"],
+              tech: ["Photomat", "StyleGAN", "DINOv2", "PyTorch", "PBR Rendering"],
               description: "A cutting-edge generative AI research project aimed at synthesizing realistic 3D material textures from natural language prompts.",
               points: [
                 "Integrated the DINOv2 (ViT-B/14) vision transformer as a high-fidelity image encoder to condition a StyleGAN-based generator, achieving significantly improved semantic alignment between input prompts and output textures.",
