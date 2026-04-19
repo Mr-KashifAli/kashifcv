@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kashif Ali - AI Researcher</title>
+    <title>Kashif Ali - AI Student </title>
     
     <!-- Tailwind CSS (Loaded via CDN for standalone use) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -61,18 +61,20 @@
         // --- CONFIGURATION ---
         const GROQ_API_KEY = "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"; 
         const GROQ_MODEL = "llama-3.3-70b-versatile"; 
+        
+        // Tells the browser to look for this exact image file
         const PROFILE_IMAGE_URL = "https://i.ibb.co/0RhRmr4T/Kashif-DP1.jpg"; 
 
         // --- RESUME DATA ---
         const resumeData = {
           personalInfo: {
             name: "Kashif Ali",
-            title: "AI Researcher & Computer Vision Engineer",
+            title: "AI Student ",
             email: "kashif.ali@fau.de",
             phone: "+49 177 5041184",
             location: "Erlangen, Germany",
             linkedin: "linkedin.com/in/kashif-ali36",
-            summary: "Master's student in Artificial Intelligence at Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU) specializing in Computer Vision, Generative AI, and Large Language Models. Passionate about bridging the gap between theoretical deep learning and practical applications in autonomous systems, simulation pipelines, and creative tools."
+            summary: "Master's student in Artificial Intelligence at Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU) with focus on Computer Vision, Generative AI, and Large Language Models (LLMs). Practical experience with deep learning models, data preprocessing, and applied AI projects."
           },
           education: [
             {
@@ -80,8 +82,8 @@
               location: "Germany",
               degree: "M.Sc. Artificial Intelligence",
               period: "Apr 2024 – Present",
-              details: "Specializing in advanced Computer Vision, Generative AI architectures (GANs, Diffusion), and LLM fine-tuning.",
-              courses: ["Deep Learning for CV", "Generative Models", "Reinforcement Learning", "Pattern Recognition"]
+              details: "Focusing on advanced DL and visual computing.",
+              courses: ["Deep Learning", "Pattern Recognition", "Computer Vision", "Intent Detection", "Advanced topics in DL", "Human-Computer interaction", "Information visualization"]
             },
             {
               school: "University of Malakand",
@@ -89,122 +91,123 @@
               degree: "B.Sc. in Computer Science",
               period: "Oct 2019 – Jul 2023",
               grade: "3.79/4.00 (First Class)",
-              details: "Strong foundation in Algorithms, Data Structures, and Software Engineering principles.",
-              courses: ["Data Structures", "Linear Algebra", "Database Systems", "Operating Systems"]
+              details: "Strong foundation in CS principles.",
+              courses: ["C/C++", "OOP", "Artificial Intelligence", "Data structures", "Database Administration", "Information security", "Assembly Language"]
             }
           ],
           projects: [
             {
-              title: "Prompt-Conditioned Material Generation",
+              title: "Prompt-Conditioned Material Generation Model (PhotoMat Extension)",
               org: "FAU",
               period: "Sep 2025 – Present",
-              tech: ["Photomat", "StyleGAN", "DINOv2", "PyTorch", "PBR Rendering"],
-              description: "A cutting-edge generative AI research project aimed at synthesizing realistic 3D material textures from natural language prompts.",
+              tech: ["DINOv2", "StyleGAN", "PBR", "SVBRDF"],
+              description: "Extending the PhotoMat architecture to synthesize materials from prompts.",
               points: [
-                "Integrated the DINOv2 (ViT-B/14) vision transformer as a high-fidelity image encoder to condition a StyleGAN-based generator, achieving significantly improved semantic alignment between input prompts and output textures.",
-                "Engineered physically based rendering (PBR) constraints within the loss function to ensure generated materials (Albedo, Normal, Roughness) obey physical laws of light interaction.",
-                "Successfully generated consistent, high-resolution SVBRDF maps suitable for direct use in 3D engines like Blender or Unreal Engine."
+                "Integrated DINOv2 (ViT-B/14) as an image encoder for StyleGAN-based material generation.",
+                "Applied physically based rendering constraints for material realism.",
+                "Generated SVBRDF maps (albedo, normal, roughness) with consistent visual quality."
               ]
             },
             {
-              title: "Representation Learning for Autonomous Driving",
+              title: "Representation Learning Project",
               org: "FAU",
               period: "Apr 2025 – Sep 2025",
-              tech: ["SAM (Segment Anything)", "PyTorch", "Metric Learning"],
-              description: "Focused on improving the robustness of semantic segmentation for autonomous vehicles by leveraging foundational models.",
+              tech: ["SAM", "PyTorch", "Segmentation"],
+              description: "Autonomous driving application focused on self-supervised representation learning.",
               points: [
-                "Processed and analyzed massive autonomous driving datasets to train self-supervised representation learning models, handling data imbalance and noisy labels.",
-                "Conducted a comparative analysis of segmentation strategies, discovering that integrating Bounding Box prompts with the Segment Anything Model (SAM) outperformed traditional fully convolutional networks by 15%.",
-                "Designed a reproducible experimental pipeline in PyTorch with strict evaluation metrics (IoU, Dice Score) to validate model robustness under varying lighting conditions."
+                "Worked with large-scale datasets for autonomous driving applications.",
+                "Evaluated segmentation strategies; bounding boxes integrated with SAM showed best results.",
+                "Designed reproducible experiments in PyTorch with robust evaluation metrics."
               ]
             },
             {
               title: "Bridging the Gap in Text-Based Emotion Detection",
               period: "May 2024",
-              tech: ["NLP", "BERT", "LSTM", "CNN"],
-              description: "A deep learning system designed to detect subtle emotional nuances in text, moving beyond simple polarity classification.",
+              tech: ["LSTM", "CNN", "BERT"],
+              description: "Multi-label emotion detection and intensity prediction from text.",
               points: [
-                "Architected a hybrid multi-label emotion detection system capable of quantifying emotion intensity, addressing the ambiguity often found in short-text social media data.",
-                "Implemented and benchmarked diverse architectures including Bi-LSTMs, CNNs, and fine-tuned BERT transformers across complex multilingual datasets.",
-                "Achieved state-of-the-art performance metrics (F1-score, Precision, Recall) compared to baseline lexical approaches, optimizing for both inference speed and accuracy."
+                "Built a deep learning-based system for multi-label emotion detection and intensity prediction from text.",
+                "Implemented and compared LSTM, CNN, and BERT models on multilingual datasets.",
+                "Evaluated performance using F1-score, precision, and recall."
               ]
             }
           ],
           otherProjects: [
             {
-              title: "Real-Time Object Detection in Surveillance",
-              tech: ["YOLOv4", "TensorRT", "OpenCV", "Darknet"],
+              title: "Object Detection in Surveillance",
+              tech: ["YOLOv4"],
               icon: Eye,
-              desc: "Developed a high-performance anomaly detection pipeline for security feeds. Optimized the YOLOv4 architecture using TensorRT for edge deployment, achieving 30+ FPS on embedded NVIDIA Jetson hardware while maintaining high mAP (mean Average Precision) on the COCO dataset.",
+              desc: "Applied YOLOv4 architecture to detect objects and anomalies in surveillance feeds.",
               link: "#"
             },
             {
-              title: "Fine-Grained Image Classification Analysis",
-              tech: ["VGG-16", "ResNet50", "Keras", "Transfer Learning"],
+              title: "Image Classification",
+              tech: ["VGG-16"],
               icon: Layers,
-              desc: "Conducted an extensive comparative study of deep CNN architectures (VGG-16 vs ResNet50) for fine-grained image classification tasks. Implemented advanced data augmentation and transfer learning techniques to achieve 92% top-1 accuracy on benchmark datasets, significantly reducing training time.",
+              desc: "Implemented and trained VGG-16 models for high-accuracy image classification tasks.",
               link: "#"
             },
             {
-              title: "Misinformation & Fake News Detector",
-              tech: ["NLP", "Scikit-learn", "TF-IDF", "PassiveAggressive"],
+              title: "Fake News Detector",
+              tech: ["NLP", "Classification"],
               icon: Shield,
-              desc: "Built a robust Natural Language Processing pipeline to identify fake news. Utilized TF-IDF vectorization and Passive Aggressive Classifiers to analyze linguistic patterns and source credibility, achieving high precision/recall on the LIAR dataset.",
+              desc: "Developed a text classification pipeline to identify misinformation and fake news.",
               link: "#"
             },
             {
-              title: "Financial Market Forecasting Engine",
-              tech: ["Time Series", "LSTM", "ARIMA", "Pandas"],
+              title: "Stock & Housing Price Prediction",
+              tech: ["Time Series", "Regression"],
               icon: TrendingUp,
-              desc: "Engineered predictive models for stock and housing market trends. Compared traditional ARIMA statistical models against deep LSTM networks, featuring extensive Exploratory Data Analysis (EDA) and feature engineering to handle non-stationary time-series data.",
+              desc: "Utilized machine learning regression models for financial and real estate forecasting.",
               link: "#"
             },
             {
-              title: "Automated Data Scraping & Pipeline",
-              tech: ["Python", "Selenium", "BeautifulSoup", "Tableau"],
-              icon: Server,
-              desc: "Created scalable automated bots to scrape, clean, and structure complex datasets from multiple web sources. Built an end-to-end pipeline that feeds cleaned data directly into Tableau dashboards for real-time market analysis and visualization.",
+              title: "Data Scraping & Analysis",
+              tech: ["Web Scraping", "Data Viz"],
+              icon: Database,
+              desc: "Built scripts for automated web scraping, data cleaning, analysis, and visualization.",
               link: "#"
             }
           ],
           certifications: [
             {
               name: "Generative AI with Large Language Models",
-              issuer: "Deep Learning.AI",
+              issuer: "DeepLearning.AI",
               date: "Jan 2024",
-              focus: "Transformer Architectures, RLHF, Prompt Engineering"
+              focus: "LLMs, AI"
             },
             {
               name: "Business Intelligence and Data Analytics",
               issuer: "Coursera",
               date: "Jan 2024",
-              focus: "Data Visualization, Tableau, Decision Science"
+              focus: "Analytics, BI"
             },
             {
               name: "Data Science Methodology, Database and SQL",
               issuer: "Credly",
               date: "Nov 2023",
-              focus: "Relational Databases, SQL Optimization, ETL Pipelines"
+              focus: "SQL, Data Science"
             },
             {
               name: "Python for Data Science, AI & Development",
               issuer: "Coursera",
               date: "Nov 2023",
-              focus: "Pandas, NumPy, Scikit-learn, API Integration"
+              focus: "Python, Development"
             }
           ],
           achievements: [
-            "Selected to present novel findings on Generative Material synthesis at the departmental seminar, receiving commendation for technical clarity.",
-            "Consistently ranked in the top 20% of participants in Kaggle competitions focused on computer vision and tabular data regression.",
-            "Served as a peer mentor for 50+ undergraduate students, conducting weekly workshops on Python programming and foundational Machine Learning concepts."
+            "Presented academic project results in seminar groups at FAU.",
+            "Active participation in Kaggle competitions for applied ML.",
+            "Volunteered as a mentor to help peers with Python programming and ML basics."
           ],
           skills: {
-            "Generative AI & LLMs": ["Transformers", "RAG Systems", "Diffusion Models", "GANs", "VAEs", "Hugging Face"],
-            "Computer Vision": ["Segment Anything (SAM)", "YOLOv4", "VGG-16", "OpenCV", "Semantic Segmentation", "Object Tracking"],
-            "Deep Learning Core": ["PyTorch", "TensorFlow", "JAX", "Flax", "Keras", "Transfer Learning"],
-            "Data Science & MLOps": ["Pandas", "NumPy", "Matplotlib", "Scikit-learn", "Docker", "Git/CI-CD"],
-            "Languages": ["Python", "C++", "MATLAB", "SQL", "R", "JavaScript"],
-            "3D Simulation": ["Blender", "Isaac Sim", "USD Pipelines", "GLTF", "PBR Rendering"]
+            "Programming & Tools": ["Python", "MATLAB", "SQL", "C++", "R", "Jupyter Notebooks"],
+            "ML/DL Frameworks": ["TensorFlow", "PyTorch", "JAX/Flax"],
+            "Generative AI": ["Large Language Models (LLMs)", "GANs", "VAEs", "Diffusion Models"],
+            "Computer Vision": ["Segment Anything (SAM)", "YOLOv4", "VGG-16"],
+            "3D Vision & Simulation": ["Blender", "Isaac Sim", "USD/GLTF pipelines"],
+            "Data Science": ["Data Processing", "Visualization (Python)"],
+            "Teamwork": ["Academic and project-based collaboration"]
           },
           languages: [
             { name: "English", level: "Fluent" },
@@ -286,7 +289,7 @@
             const SYSTEM_PROMPT = `
               You are the AI Assistant for Kashif Ali's resume. 
               Your goal is to answer questions about Kashif's experience, skills, and background professionally and accurately based ONLY on the following context.
-              Be concise, enthusiastic, and professional. 
+              Be concise, enthusiastic, and professional. Kashif is currently a Master's student in AI at FAU.
               If the user asks about a specific project, provide technical depth based on the bullet points.
 
               CONTEXT:
@@ -465,7 +468,7 @@
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                       </span>
-                      Available for Research & Engineering Roles
+                      Actively Seeking AI & Machine Learning Opportunities
                     </div>
                     
                     <div className="space-y-4">
@@ -519,7 +522,7 @@
                     {/* Image Container */}
                     <div className="relative w-full h-full rounded-[2rem] border-8 border-white/50 dark:border-gray-800/50 backdrop-blur-sm overflow-hidden shadow-2xl bg-gradient-to-br from-gray-100 to-white dark:from-gray-800 dark:to-gray-900 flex items-center justify-center group hover:scale-[1.02] transition-transform duration-500">
                        {imgError ? (
-                         <div className="text-8xl font-black text-gray-200 dark:text-gray-700 select-none group-hover:scale-110 transition-transform duration-700">
+                         <div className="text-8xl font-black text-gray-200 dark:text-gray-700 select-none group-hover:scale-110 transition-transform duration-700 flex flex-col items-center justify-center text-center p-4">
                             KA
                          </div>
                        ) : (
