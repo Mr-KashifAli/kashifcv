@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kashif Ali - AI Student </title>
+    <title>Kashif Ali - AI Student & Junior Researcher</title>
     
-    <!-- Tailwind CSS (Loaded via CDN for standalone use) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -27,12 +27,12 @@
         }
     </script>
 
-    <!-- React & ReactDOM (Loaded via CDN) -->
     <script type="importmap">
     {
         "imports": {
             "react": "https://esm.sh/react@18.2.0",
             "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+            "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
             "lucide-react": "https://esm.sh/lucide-react@0.292.0?external=react"
         }
     }
@@ -62,14 +62,14 @@
         const GROQ_API_KEY = "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"; 
         const GROQ_MODEL = "llama-3.3-70b-versatile"; 
         
-        // Tells the browser to look for this exact image file
+        // Profile Image
         const PROFILE_IMAGE_URL = "https://i.ibb.co/0RhRmr4T/Kashif-DP1.jpg"; 
 
         // --- RESUME DATA ---
         const resumeData = {
           personalInfo: {
             name: "Kashif Ali",
-            title: "AI Student ",
+            title: "AI Student & Junior Researcher",
             email: "kashif.ali@fau.de",
             phone: "+49 177 5041184",
             location: "Erlangen, Germany",
@@ -217,8 +217,6 @@
           ]
         };
 
-        // --- COMPONENTS ---
-
         const ThemeToggle = ({ isDark, toggle }) => (
           <button 
             onClick={toggle} 
@@ -251,8 +249,6 @@
             {children}
           </span>
         );
-
-        // --- CHATBOT COMPONENT ---
 
         const ChatBot = ({ isOpen, setIsOpen, initialQuery, onQueryHandled }) => {
           const [messages, setMessages] = useState([
@@ -315,6 +311,10 @@
                 })
               });
 
+              if (!response.ok) {
+                 throw new Error("API Blocked or Invalid Key");
+              }
+
               const data = await response.json();
               const botMessage = { 
                 role: 'assistant', 
@@ -323,8 +323,31 @@
               
               setMessages(prev => [...prev, botMessage]);
             } catch (error) {
-              console.error("Error calling Groq:", error);
-              setMessages(prev => [...prev, { role: 'assistant', content: "Sorry, I encountered an error accessing the AI service." }]);
+              console.warn("API Error (likely CORS), using smart fallback:", error);
+              
+              // Smart Local Fallback Logic (if API gets blocked by browser)
+              const lowerInput = textToSend.toLowerCase();
+              let fallbackResponse = "";
+              
+              if (lowerInput.includes('summary') || lowerInput.includes('about')) {
+                 fallbackResponse = "Kashif is a Master's student in AI at FAU focusing on Computer Vision, GenAI, and LLMs, with practical deep learning experience.";
+              } else if (lowerInput.includes('project')) {
+                 fallbackResponse = "Kashif's top projects include Prompt-Conditioned Material Generation (PhotoMat with DINOv2 & StyleGAN), Representation Learning for Autonomous Driving (SAM & PyTorch), and Text-Based Emotion Detection (LSTM/BERT).";
+              } else if (lowerInput.includes('skill') || lowerInput.includes('tech')) {
+                 fallbackResponse = "His core technical skills include Python, C++, PyTorch, TensorFlow, LLMs, Computer Vision (YOLO, SAM, VGG-16), and 3D simulation tools like Blender.";
+              } else if (lowerInput.includes('education') || lowerInput.includes('degree') || lowerInput.includes('fau')) {
+                 fallbackResponse = "He is pursuing an M.Sc. in Artificial Intelligence at FAU Erlangen-Nürnberg, and holds a B.Sc. in Computer Science from the University of Malakand (First Class grade).";
+              } else if (lowerInput.includes('contact') || lowerInput.includes('email') || lowerInput.includes('phone')) {
+                 fallbackResponse = "You can reach him at kashif.ali@fau.de or +49 177 5041184.";
+              } else {
+                 fallbackResponse = "I'm currently running in offline backup mode, but I can tell you about Kashif's projects, skills, education, or contact info. What would you like to know?";
+              }
+
+              setTimeout(() => {
+                setMessages(prev => [...prev, { role: 'assistant', content: fallbackResponse }]);
+                setIsLoading(false);
+              }, 800);
+              return; 
             } finally {
               setIsLoading(false);
             }
@@ -406,8 +429,6 @@
           );
         };
 
-        // --- MAIN APP ---
-
         const App = () => {
           const [isDark, setIsDark] = useState(false);
           const [chatOpen, setChatOpen] = useState(false);
@@ -460,7 +481,7 @@
 
               <main className="max-w-7xl mx-auto px-4 sm:px-6 py-16 space-y-24">
 
-                {/* --- HERO SECTION --- */}
+                {}
                 <section className="relative flex flex-col lg:flex-row items-center gap-16 animate-in fade-in slide-in-from-bottom-10 duration-700">
                   <div className="flex-1 space-y-8">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-sm font-medium backdrop-blur-md">
@@ -537,7 +558,7 @@
                   </div>
                 </section>
 
-                {/* --- SKILLS SECTION --- */}
+                {}
                 <section>
                   <SectionTitle icon={Brain}>Technical Ecosystem</SectionTitle>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -562,7 +583,7 @@
                   </div>
                 </section>
 
-                {/* --- MAIN PROJECTS --- */}
+                {}
                 <section>
                   <SectionTitle icon={Briefcase}>Featured Research & Projects</SectionTitle>
                   <div className="space-y-12">
@@ -621,7 +642,7 @@
                   </div>
                 </section>
 
-                {/* --- OTHER PROJECTS --- */}
+                {}
                 <section>
                   <SectionTitle icon={Code}>Expanded Technical Portfolio</SectionTitle>
                   <div className="space-y-8">
@@ -680,7 +701,7 @@
                   </div>
                 </section>
 
-                {/* --- CERTIFICATIONS & ACHIEVEMENTS --- */}
+                {}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   <section>
                     <SectionTitle icon={Award}>Certifications</SectionTitle>
@@ -725,7 +746,7 @@
                   </section>
                 </div>
 
-                {/* --- EDUCATION --- */}
+                {}
                 <section>
                   <SectionTitle icon={GraduationCap}>Education</SectionTitle>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -768,7 +789,7 @@
                   </div>
                 </section>
 
-                {/* --- FOOTER --- */}
+                {}
                 <footer id="contact" className="pt-20 pb-10 border-t border-gray-200 dark:border-gray-800 text-center relative overflow-hidden">
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-indigo-500/5 to-teal-500/5 rounded-full blur-3xl pointer-events-none"></div>
                   
